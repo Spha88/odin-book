@@ -1,0 +1,80 @@
+@import '../../assets/scss/variables.scss';
+
+.LoginPage {
+    position: relative;
+    background-color: $color-bg;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    .Message {
+        position: relative;
+        padding: 4rem;
+        img {
+            width: 350px;
+            position: relative;
+            left: -40px;
+        }
+        h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 28px;
+            top: -20px;
+            position: relative;
+            line-height: 40px;
+            font-weight: normal;
+        }
+    }
+    .FormContainer {
+        padding: 20px;
+        .LoginFormContainerInner {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+            border-radius: 6px;
+            padding: 20px;
+            width: 400px;
+            .ForgottenAccount {
+                text-align: center;
+                margin: 20px 0;
+                a, a:hover, a:visited, a:focus {
+                    color: $color-blue;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+    
+            .HorizontalLine {
+                background-color: $color-gray;
+                height: 1px;
+                margin: 10px;
+            }
+    
+            .CreateNewAccount {
+                text-align: center;
+                margin-top: 30px;
+                button {
+                    padding: 14px 16px;
+                    border-radius: 6px;
+                    border: none;
+                    background-color: $color-green;
+                    color: #fff;
+                    font-size: 17px;
+                }
+            }
+        }
+        .CreateBusinessPage {
+            color: $color-black;
+            text-align: center;
+            margin-top: 40px;
+            a {
+                color: $color-black;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
