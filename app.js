@@ -6,12 +6,29 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 
+const passport = require('passport');
+FacebookStrategy = require('passport-facebook').Strategy;
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
 const app = express();
 
 app.use(cors())
+
+// SETUP Passport
+passport.use(new FacebookStrategy({
+  clientID: process.env.FB_APP_ID,
+  clientSecret: process.env.FB_APP_SECRET,
+  callbackURL: process.env.FB_CALL_BACK_URI
+},
+  function (accessToken, refreshToken, profile, done) {
+    User.findOrCreate(..., function (err, user) {
+      if (err) { return done(err); }
+      done(null, user);
+    });
+  }
+));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
