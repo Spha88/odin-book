@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.status(200).json({ user: "Hello World" });
+router.post('/', function (req, res, next) {
+  console.log(req.body);
+  res.status(200).json({ username: req.body.username, password: req.body.password });
 });
 
 module.exports = router;

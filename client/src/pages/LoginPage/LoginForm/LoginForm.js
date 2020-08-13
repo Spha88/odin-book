@@ -9,7 +9,7 @@ const LoginForm = () => {
 
     const onSubmit = data => {
         console.log(data);
-        axios.get('/users', { data })
+        axios.post('/users', data)
             .then(res => {
                 console.log("Axios Response: ", res);
             })
